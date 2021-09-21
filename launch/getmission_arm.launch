@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="getmission" type="getmission" name="getmission_arm"/>
+    <node pkg="getmission" type="getmission_ready" name="getmission_arm_ready"/>
+</launch>
