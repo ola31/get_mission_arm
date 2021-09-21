@@ -103,7 +103,7 @@ find_package(Boost REQUIRED COMPONENTS system)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-  LIBRARIES getmission
+  LIBRARIES getmission_arm
   CATKIN_DEPENDS roscpp std_msgs
   DEPENDS system_lib
 )
