@@ -216,7 +216,7 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "getmission_arm");
     ros::NodeHandle nh;
 
-    ros::Subscriber sub = nh.subscribe("/nuc2/mission", 10, mission_Callback);
+    ros::Subscriber sub = nh.subscribe("/mission", 10, mission_Callback);
 
     ros::spin();
 
