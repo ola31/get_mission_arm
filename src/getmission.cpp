@@ -175,7 +175,9 @@ void mission_Callback(const std_msgs::UInt16 msg)
   }
 
   else if(msg.data == 120){
-      std::string command_arm_key = "gnome-terminal -- roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch";
+      //std::string command_arm_key = "gnome-terminal -- roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch";
+      std::string command_arm_key = "gnome-terminal -- rosrun open_manipulator_teleop open_manipulator_teleop_keyboard_sub";
+
       const char *arm_key_c = command_arm_key.c_str();
       system(arm_key_c);
   }
@@ -199,7 +201,7 @@ void mission_Callback(const std_msgs::UInt16 msg)
   }
 
   else if(msg.data == 121){
-      std::string command_arm_key_stop = "rosnode kill /teleop_keyboard";
+      std::string command_arm_key_stop = "rosnode kill /open_manipulator_teleop_keyboard_woo";
       const char *arm_stop_key_c = command_arm_key_stop.c_str();
       system(arm_stop_key_c);
   }
