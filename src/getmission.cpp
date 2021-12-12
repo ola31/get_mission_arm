@@ -186,6 +186,12 @@ void mission_Callback(const std_msgs::UInt16 msg)
       const char *arm_service_c = command_arm_service.c_str();
       system(arm_service_c);
   }
+  else if(msg.data == 40){
+      std::string command_arm_service = "gnome-terminal -- roslaunch usb_cam usb_cam-test.launch";
+      const char *cam_c = command_arm_service.c_str();
+      system(cam_c);
+  }
+
 
 
   if(msg.data == 101){
@@ -209,6 +215,11 @@ void mission_Callback(const std_msgs::UInt16 msg)
       std::string command_arm_service_stop = "rosnode kill /teleop_xyz";
       const char *arm_stop_service_c = command_arm_service_stop.c_str();
       system(arm_stop_service_c);
+  }
+  else if(msg.data == 41){
+      std::string command_arm_service_stop = "rosnode kill /usb_cam_arm /exchange_image";
+      const char *cam_stop_c = command_arm_service_stop.c_str();
+      system(cam_stop_c);
   }
 
 }
